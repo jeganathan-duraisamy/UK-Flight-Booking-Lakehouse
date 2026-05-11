@@ -1,0 +1,21 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.env
+
+# Databricks
+.databricks/
+*.dbc
+
+# Delta table files (don't commit binary data)
+*.parquet
+_delta_log/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
