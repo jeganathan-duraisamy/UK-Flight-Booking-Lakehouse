@@ -44,13 +44,13 @@ Uk-property-lakehouse/
 
 ## Setup Instructions
 
-### Step 1 — Upload raw data to Databricks volume
+### Step 1 - Upload raw data to Databricks volume
 
 1. In Databricks, go to **Catalog → Volumes**
 2. Navigate to `/Volumes/workspace/raw/rawVolume/rawdata/`
 3. Upload all CSV files from the `data/` folder
 
-### Step 2 — Import notebooks
+### Step 2 - Import notebooks
 
 1. In Databricks Workspace, create a folder: `End to End Databricks Flight Project`
 2. Import each notebook from `notebooks/` using **File → Import**
@@ -64,7 +64,7 @@ Uk-property-lakehouse/
    └── GOLD_FACT
    ```
 
-### Step 3 — Configure parameters
+### Step 3 - Configure parameters
 
 Open `Src_Parameters` and verify the source path widget matches your volume path:
 
@@ -73,14 +73,14 @@ src_value = dbutils.widgets.get("src")
 # Default: /Volumes/workspace/raw/rawVolume/rawdata/
 ```
 
-### Step 4 — Run Bronze layer
+### Step 4 - Run Bronze layer
 
 1. Open `BronzeLayer`
 2. Attach to a Serverless cluster
 3. Run all cells
 4. Verify output: 0 duplicate records, all 4 base tables loaded
 
-### Step 5 — Run Silver DLT pipeline
+### Step 5 - Run Silver DLT pipeline
 
 1. Go to **Jobs & Pipelines → Create Pipeline**
 2. Set pipeline mode: **Triggered**
@@ -88,7 +88,7 @@ src_value = dbutils.widgets.get("src")
 4. Click **Start** and monitor the pipeline graph
 5. Verify: 1,300+ records processed, all expectations passed
 
-### Step 6 — Run Gold layer
+### Step 6 - Run Gold layer
 
 1. Open `GOLD_DIMS` → Run all cells (builds 4 dimension tables)
 2. Open `GOLD_FACT` → Run all cells (builds fact_bookings)
@@ -109,9 +109,9 @@ data/
 To process an incremental load:
 
 1. Upload the increment CSV to the raw volume
-2. Re-run `BronzeLayer` — Autoloader detects new files via checkpoint
-3. Re-trigger the Silver DLT pipeline — only new records are processed
-4. Re-run Gold notebooks — dimensions and fact table update automatically
+2. Re-run `BronzeLayer` - Autoloader detects new files via checkpoint
+3. Re-trigger the Silver DLT pipeline - only new records are processed
+4. Re-run Gold notebooks - dimensions and fact table update automatically
 
 ---
 
