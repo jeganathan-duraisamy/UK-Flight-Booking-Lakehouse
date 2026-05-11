@@ -43,7 +43,7 @@ Raw CSV Files (Cloud Storage)
 |-----------|--------|
 | Ingestion method | Databricks Autoloader (`cloudFiles`) |
 | File format | CSV (raw source) → Delta |
-| Deduplication | Checkpoint-based — 0 duplicate records verified |
+| Deduplication | Checkpoint-based - 0 duplicate records verified |
 | Tables | `dim_airports`, `dim_flights`, `dim_passengers`, `fact_bookings` |
 | Notebook | `notebooks/bronze/BronzeLayer.py` |
 | Parameters | `notebooks/bronze/Src_Parameters.py` |
@@ -123,8 +123,8 @@ Key design decisions:
 
 ## Design Principles
 
-1. **Idempotency** — Bronze ingestion can be re-run without producing duplicates
-2. **Incremental processing** — Silver DLT pipelines process only new records
-3. **Data quality at ingestion** — DLT expectations fail records before they reach Gold
-4. **Governance by default** — All tables registered in Unity Catalog with owner metadata
-5. **Separation of concerns** — Each layer has a single responsibility; no cross-layer writes
+1. **Idempotency** - Bronze ingestion can be re-run without producing duplicates
+2. **Incremental processing** - Silver DLT pipelines process only new records
+3. **Data quality at ingestion** - DLT expectations fail records before they reach Gold
+4. **Governance by default** - All tables registered in Unity Catalog with owner metadata
+5. **Separation of concerns** - Each layer has a single responsibility; no cross-layer writes
