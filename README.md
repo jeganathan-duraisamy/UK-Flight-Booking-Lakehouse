@@ -1,4 +1,4 @@
-#  UK Property Lakehouse: Data Engineering Project
+#  UK-Flight-Booking-Lakehouse: Data Engineering Project
 
 ##  Overview
 
